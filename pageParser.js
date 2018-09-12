@@ -12,7 +12,7 @@ function pageInfo() {
     //console.log(prev);
     if (!/index(\d*)\.html/.test(prev)) return 'error';
     let prevPageNumber=  /index(\d*)\.html/.exec(prev)[1] ;
-    return new Number(prevPageNumber)+1;
+    return Number(prevPageNumber)+1;
   }
   function linkParser() {
     let link = [];
