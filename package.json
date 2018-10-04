@@ -1,8 +1,11 @@
 {
-  "name": "puppeteer-tester",
+  "name": "ptt-parser",
   "version": "1.0.0",
-  "description": "",
-  "main": "a.js",
+  "description": "A crawler and parser for ptt web page",
+  "main": "index.js",
+  "bin": {
+    "ptt-parser": "./index.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,7 +13,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "moment": "^2.22.2",
     "puppeteer": "^1.7.0"
   }
 }
