@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-let pageParser = require('./pageParser');
-let articleParser = require('./articleParser');
+let pageParser = require('./lib/pageParser');
+let articleParser = require('./lib/articleParser');
 const fs = require('fs');
 const puppeteer = require('puppeteer');
 
@@ -34,12 +34,15 @@ console.log(
   let pageInfo;
 
   while (true) {
-    let p = await page.goto(`https://www.ptt.cc/bbs/${Board}/index${PageNumber}.html`, {
-      waitUntil: 'domcontentloaded',
-      timeout: 0
-    });
+    let p = await page.goto(
+      `https://www.ptt.cc/bbs/${Board}/index${PageNumber}.html`,
+      {
+        waitUntil: 'domcontentloaded',
+        timeout: 0
+      }
+    );
 
-    if (await p.status() >= 400) {
+    if ((await p.status()) >= 400) {
       console.log('此頁不存在');
       continue;
     }
@@ -68,7 +71,7 @@ console.log(
         waitUntil: 'domcontentloaded',
         timeout: 0
       });
-      if (await article.status() >= 400) {
+      if ((await article.status()) >= 400) {
         console.log('此篇文章不存在');
         continue;
       }
