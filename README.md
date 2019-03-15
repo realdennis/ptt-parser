@@ -10,6 +10,9 @@ Only one -- Puppeteer!
 ## Demo
 ![](https://raw.githubusercontent.com/realdennis/ptt-parser/master/demo/demo.jpg)
 
+## Async request/file save
+![](https://raw.githubusercontent.com/realdennis/ptt-parser/master/demo/async.jpg)
+
 ## Usage
 ```
 $  npm install ptt-parser -g
